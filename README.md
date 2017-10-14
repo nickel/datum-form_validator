@@ -32,17 +32,21 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Using docker
 
-### Generate image
+### Generating image
 
 `docker build -t datum-form_validator .`
 
 ### Running tests
 
-`docker run -v $(pwd):/gem -it datum-form_validator rake`
+`docker run datum-form_validator rake`
 
 ### Building gem
 
-`docker run -v $(pwd):/gem -it datum-form_validator gem build datum-form_validator.gemspec`
+`docker run -v $(pwd):/gem datum-form_validator gem build datum-form_validator.gemspec`
+
+### Publishing gem
+
+`docker run datum-form_validator bundle exec rake release`
 
 ## Contributing
 
